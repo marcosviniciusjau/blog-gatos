@@ -1,0 +1,128 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+:root {
+  --primary: #065E7C;
+  --white: #FFFFFF;
+}
+
+body,input,textarea,button{
+  font-family: 'Mulish', sans-serif;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+}
+
+#app{
+  display: grid;
+  grid-template-areas: 
+  'header'
+  'main'
+  'footer';
+  grid-template-rows: auto 2fr 64px;
+  width: 430px;
+  align-content: center;
+  height: 100vh;
+}
+
+header{
+  grid-area: header;
+  justify-content: center;
+  background-color: var(--primary);
+}
+
+nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 0;
+}
+
+nav > input {
+  border: none;
+  background-color: var(--white);
+  padding: 12px;
+  border-radius: 4px;
+}
+
+main {
+  grid-area: main;
+  background-color: var(--white);
+  overflow-y: scroll;
+  max-width: 430px;
+  padding-left: 15px;
+  overflow-x: hidden;
+}
+
+.banner{
+margin-bottom: 30px;
+}
+
+.banner > h1{
+  font-size: 24px;
+  
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+section {
+  margin-top: 20px;
+}
+
+article {
+  display: grid;
+  grid-template-areas:
+  'preguica text'
+  'balaio text'
+  'cartela text'
+  'frio text'
+  'moacir text'
+  ;
+  grid-template-columns: 1fr 1fr;
+  padding: 20px 15px;
+}
+
+.preguica{
+  grid-area: preguica;
+  
+  margin-bottom: 50px;
+}
+
+.balaio{
+  grid-area: balaio;
+  
+  margin-bottom: 50px;
+}
+
+.cartela{
+  grid-area: cartela;
+  
+  margin-bottom: 50px;
+}
+
+.frio{
+  grid-area: frio;
+  
+  margin-bottom: 50px;
+}
+
+.moacir{
+  grid-area: moacir;
+  
+  margin-bottom: 50px;
+}
+
+footer {
+  grid-area: footer;
+  background-color: var(--primary);
+}
+footer > p{
+  text-align: center;
+}
