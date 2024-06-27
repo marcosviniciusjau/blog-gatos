@@ -19,32 +19,32 @@ body,input,textarea,button{
 #app{
   display: grid;
   grid-template-areas: 
-  'header header'
-  'main main'
-  'section section'
-  'footer footer';
-  grid-template-rows: 4.325rem 1fr 3.125rem 0.125rem;
-  width: 26.875rem;
-  align-content: center;
-  height: 100vh;
+  'header'
+  'main'
+  'section'
+  'footer';
+  grid-template-rows: 4.5rem 1fr;
 }
 
 header{
   grid-area: header;
-  justify-content: center;
+  display: grid;
+  place-items: center;
   background-color: var(--primary);
+  
+  height: 4.5rem;
 }
 
 nav{
   display: flex;
-  justify-content: center;
+  margin-right: 1.5rem;
   gap: 0.5rem;
-  padding:1rem 3rem 3rem 0.3rem;
 }
 
 nav > input {
   border: none;
   background-color: var(--white);
+  width: 13rem;
   padding: 0.75rem;
   border-radius: 4px;
 }
@@ -59,23 +59,25 @@ main {
 
 .banner{
 margin-bottom:1.875rem;
-
 padding-left: 1rem;
+gap: 10rem;
 }
 
 .banner > h1{
-  font-size: 1.5rem;
-  
+  font-size: 1.3rem;
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
 }
+
 p{
   max-width: 26.875rem;
   padding-left: 1rem;
 }
+
 section {
   grid-area: section;
   margin-top: 1.25rem;
+  padding-left: 1rem;
 }
 
 article {
@@ -89,12 +91,20 @@ article {
   ;
   grid-template-columns: 1fr 1fr;
   padding: 1.25rem 1rem;
+  font-size: 0.875rem;
 }
+article > aside {
 
+  padding-bottom: 1.25rem;
+}
 .preguica{
   grid-area: preguica;
   
   margin-bottom: 3.125rem;
+}
+
+.sabado > h3{
+  margin-left: 13px;
 }
 
 .balaio{
@@ -103,10 +113,19 @@ article {
   margin-bottom: 3.125rem;
 }
 
+.balaio_gatos > h3{
+  margin-left: 13px;
+}
+
 .cartela{
   grid-area: cartela;
   
-  margin-bottom: 3.125rem;
+  margin-bottom: 4.125rem;
+}
+
+.cartela_cores > h3{
+  margin-left: 13px;
+  
 }
 
 .frio{
@@ -114,16 +133,24 @@ article {
   
   margin-bottom: 3.125rem;
 }
-
+.frio_gatos > h3{
+  margin-left: 13px;
+}
 .moacir{
   grid-area: moacir;
   
   margin-bottom: 3.125rem;
 }
-
+.moacir_gato > h3{
+  margin-left: 13px;
+}
 footer {
   grid-area: footer;
   background-color: var(--primary);
+  display: grid;
+  place-items: center;
+
+  height: 4.5rem;
 }
 footer > p{
   text-align: center;
@@ -210,7 +237,6 @@ main {
 section {
   grid-area: section;
   margin-top: 1.25rem;
-  margin-left:3.125rem;
 }
 
 article {
