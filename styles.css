@@ -8,25 +8,23 @@
 :root {
   --primary: #065E7C;
   --white: #FFFFFF;
+  font-size: 1rem;
 }
 
 body,input,textarea,button{
   font-family: 'Mulish', sans-serif;
 }
 
-body{
-  display: flex;
-  justify-content: center;
-}
-
+@media(max-width: 48rem) {
 #app{
   display: grid;
   grid-template-areas: 
-  'header'
-  'main'
-  'footer';
-  grid-template-rows: auto 2fr 64px;
-  width: 430px;
+  'header header'
+  'main main'
+  'section section'
+  'footer footer';
+  grid-template-rows: 4.325rem 1fr 3.125rem 0.125rem;
+  width: 26.875rem;
   align-content: center;
   height: 100vh;
 }
@@ -40,15 +38,14 @@ header{
 nav{
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 12px;
-  padding: 18px 0;
+  gap: 0.5rem;
+  padding:1rem 3rem 3rem 0.3rem;
 }
 
 nav > input {
   border: none;
   background-color: var(--white);
-  padding: 12px;
+  padding: 0.75rem;
   border-radius: 4px;
 }
 
@@ -56,24 +53,29 @@ main {
   grid-area: main;
   background-color: var(--white);
   overflow-y: scroll;
-  max-width: 430px;
-  padding-left: 15px;
+  max-width: 26.875rem;
   overflow-x: hidden;
 }
 
 .banner{
-margin-bottom: 30px;
+margin-bottom:1.875rem;
+
+padding-left: 1rem;
 }
 
 .banner > h1{
-  font-size: 24px;
+  font-size: 1.5rem;
   
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 }
-
+p{
+  max-width: 26.875rem;
+  padding-left: 1rem;
+}
 section {
-  margin-top: 20px;
+  grid-area: section;
+  margin-top: 1.25rem;
 }
 
 article {
@@ -86,37 +88,37 @@ article {
   'moacir text'
   ;
   grid-template-columns: 1fr 1fr;
-  padding: 20px 15px;
+  padding: 1.25rem 1rem;
 }
 
 .preguica{
   grid-area: preguica;
   
-  margin-bottom: 50px;
+  margin-bottom: 3.125rem;
 }
 
 .balaio{
   grid-area: balaio;
   
-  margin-bottom: 50px;
+  margin-bottom: 3.125rem;
 }
 
 .cartela{
   grid-area: cartela;
   
-  margin-bottom: 50px;
+  margin-bottom: 3.125rem;
 }
 
 .frio{
   grid-area: frio;
   
-  margin-bottom: 50px;
+  margin-bottom: 3.125rem;
 }
 
 .moacir{
   grid-area: moacir;
   
-  margin-bottom: 50px;
+  margin-bottom: 3.125rem;
 }
 
 footer {
@@ -125,4 +127,144 @@ footer {
 }
 footer > p{
   text-align: center;
+}
+}
+
+@media(min-width: 48rem) {
+#app{
+  display: grid;
+  grid-template-areas: 
+  'header header'
+  'main section'
+  'footer footer';
+  grid-template-rows: auto 2fr 4rem;
+  
+  grid-template-column: 2fr;
+  align-content: center;
+  height: 120vh;
+}
+
+header{
+  grid-area: header;
+  justify-content: center;
+  background-color: var(--primary);
+  margin-bottom:1.875rem;
+  height: 4.5rem
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding:1.125rem 1.5rem;
+}
+
+nav > input {
+  border: none;
+  background-color: var(--white);
+  color: var(--primary);
+  padding: 0.75rem;
+  width: 68rem;
+  border-radius: 4px;
+}
+
+main {
+  grid-area: main;
+  background-color: var(--white);
+  overflow: hidden;
+  padding-left: 3rem;
+  height: 100vh;
+}
+
+.banner {
+  display: grid;
+  grid-template-areas: 'title title like deslike';
+  grid-template-columns: 2fr 3.125rem;
+  margin-bottom: 1.875rem;
+}
+
+.banner > h1{
+  grid-area: title;
+  font-size: 1.5rem;
+  
+  margin-top: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.banner > .like {
+  padding-right: 0.5rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  grid-area: like;
+}
+
+.banner > .deslike {
+  margin-top: 1rem;
+  grid-area: deslike;
+}
+
+.gato_main{
+  width: 100%;
+}
+
+section {
+  grid-area: section;
+  margin-top: 1.25rem;
+  margin-left:3.125rem;
+}
+
+article {
+  display: grid;
+  grid-template-areas:
+  'preguica text'
+  'balaio text'
+  'cartela text'
+  'frio text'
+  'moacir text'
+  ;
+  grid-template-columns: 10.5rem 1fr;
+  padding: 1.25rem 1rem;
+}
+
+.preguica{
+  grid-area: preguica;
+  
+  margin-bottom:1.875rem;
+}
+
+.balaio{
+  grid-area: balaio;
+  
+  margin-bottom:1.875rem
+}
+
+.cartela{
+  grid-area: cartela;
+  
+  margin-bottom:1.875rem
+}
+
+.frio{
+  grid-area: frio;
+  
+  margin-bottom:1.875rem
+}
+
+.moacir{
+  grid-area: moacir;
+  
+  margin-bottom:1.875rem
+}
+
+footer {
+  grid-area: footer;
+  background-color: var(--primary);
+  display: grid;
+  place-items: center;
+}
+
+footer > p {
+  text-align: center;
+  margin: 0;
+}
 }
